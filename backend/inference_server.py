@@ -13,7 +13,8 @@ app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
 
 # Load model
-emotion_model = load_model("emotion_model_full.keras")
+emotion_model = load_model("backend/emotion_model_full.keras")
+
 
 # Emotion dictionary
 emotion_dict = {
