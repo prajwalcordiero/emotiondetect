@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: emotion-detect-app
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python backend/inference_server.py"
+    plan: free
+    region: oregon
+    envVars:
+      - key: FLASK_ENV
+        value: production
