@@ -1,5 +1,4 @@
-import eventlet
-eventlet.monkey_patch()
+
 from flask import Flask, send_from_directory, request
 from flask_socketio import SocketIO, emit
 import base64
@@ -13,10 +12,10 @@ from tensorflow.keras.models import load_model
 # Flask setup
 app = Flask(__name__, static_folder="../frontend", static_url_path="")
 app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode="eventlet")
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
 
 # Load model
-emotion_model = load_model("backend/emotion_model_full.h5")
+emotion_model = load_model("emotion_model_full.keras")
 
 
 # Emotion dictionary
@@ -26,11 +25,11 @@ emotion_dict = {
 }
 
 # Classify emotions
-ACTIVE_EMOTIONS = {"Happy", "Sad", "Neutral", "Angry", "Disgusted"}
-INACTIVE_EMOTIONS = {"Fearful", "Surprised"}
+ACTIVE_EMOTIONS = {"Happy", "Sad", "Neutral", "Angry", "Disgusted", "Surprised"}
+INACTIVE_EMOTIONS = {"No Face","Fearful"}
 
 # Inactivity timeout
-INACTIVE_TIMEOUT = 300  # seconds (adjust to 600 for production)
+INACTIVE_TIMEOUT = 5  # seconds (adjust to 600 for production)
 
 # Face detector
 face_detector = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
