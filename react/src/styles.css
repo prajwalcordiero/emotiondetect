@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+:root { font-family: 'Inter', sans-serif; }
+.inactive-overlay {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(239, 68, 68, 0.7);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.participant-card.inactive .inactive-overlay {
+  opacity: 1;
+}
+.video-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
