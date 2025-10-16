@@ -1,13 +1,22 @@
 # IntelliClass (Vite + React)
 
-This is a Vite + React conversion of the HTML project you provided. Tailwind is included using the CDN (same classes as original). Lucide icons are loaded via unpkg CDN and are invoked from React.
+IntelliClass is a web-based classroom simulation platform built with **Vite + React.** . The app includes a login system, dashboard, and a meeting simulation environment with AI-driven inactivity monitoring for teachers, making it an interactive tool for classroom management and teaching practice.
+This project contains:  
 
-## Quick start
+- Login page  
+- Dashboard  
+- Meeting simulation  
+- AI-driven inactivity toggles for teachers  
 
-1. unzip `intelli-class.zip`
-2. `cd intelli-class`
-3. `npm install`
-4. `npm run dev`
-5. Open the URL shown by Vite (usually http://localhost:5173)
+---
 
-This project preserves the original UI and behaviour (login, dashboard, meeting simulation, AI-driven inactivity toggles for teachers).
+## Quick Start
+
+Follow these steps to run the project locally:
+
+### 1. Download the Project
+- Click the **Code** button on GitHub and select **Download ZIP**  
+- Or clone the repository using Git:
+
+```bash
+git clone https://github.com/prajwalcordiero/emotiondetect.git
